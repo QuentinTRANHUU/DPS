@@ -12,5 +12,27 @@ def get_df(relative_path):
     #retourne la dataframe choisi via son relative path
     return pd.read_csv(path + relative_path).iloc[:,1:-1]
 
+def create_champ_formulaire(df,col):
+    col_type = df[col].dtype
+    if col_type == "O" or (col_type == "int64" and len(df.col.unique()) < 7) :
+        return dbc.InputGroup(
+                            [
+                                
+                                dbc.InputGroupText(col),
+                                dbc.Select(options=[{"label": val, "value": val} for val in df[col].unique()],
+                                           id = col)
+                            ],
+                            className="mb-3"
+                            )
+    else :
+        return dbc.InputGroup(
+                                [
+                                    dbc.InputGroupText(col),
+                                    dbc.Input(type="number",
+                                              id = col),
+                                ],
+                                className="mb-3"
+                            )
+
 def create_formulaire(df):
-    return [html.P(f"{df.columns}"), html.P(f"{df.dtypes.values}")]
+    return [html.Div([create_champ_formulaire(df, col) for col in df.columns])]
