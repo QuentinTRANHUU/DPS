@@ -14,7 +14,7 @@ def get_df(relative_path):
 
 def create_champ_formulaire(df,col):
     col_type = df[col].dtype
-    if col_type == "O" or (col_type == "int64" and len(df.col.unique()) < 7) :
+    if col_type == "O" or (col_type == "int64" and len(df[col].unique()) < 7) :
         return dbc.InputGroup(
                             [
                                 
