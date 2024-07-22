@@ -2,14 +2,10 @@ from dash import Dash, html, dcc,register_page
 import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
-import os
+import formulaire
 
-path = os.path.dirname(os.path.realpath(__file__))
-my_path = '\\'.join(path.split('\\')[:-1])
 
-os.chdir(path=my_path)
-
-df = pd.read_csv(my_path + r"\dataframes\clean_ckd_df.csv")
+df = formulaire.get_df(r"\dataframes\clean_ckd_df.csv")
 
 # Enregistrement de la page
 register_page(__name__)
@@ -71,7 +67,7 @@ layout = dbc.Container([
                     [
                         dbc.AccordionItem(
                             [
-                                html.P(f"{df.columns}")
+                                formulaire.create_formulaire(df)
                             ],
                             title=html.H4("Faites le Test", className="text-center"),
                             className="bg-light")
