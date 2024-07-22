@@ -2,6 +2,14 @@ from dash import Dash, html, dcc,register_page
 import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
+import os
+
+path = os.path.dirname(os.path.realpath(__file__))
+my_path = '\\'.join(path.split('\\')[:-1])
+
+os.chdir(path=my_path)
+
+df = pd.read_csv(my_path + r"\dataframes\clean_ckd_df.csv")
 
 # Enregistrement de la page
 register_page(__name__)
@@ -36,8 +44,8 @@ layout = dbc.Container([
                                         [
                                             html.H4("Avant de commencer", className="card-title text-center p-4"),
                                             html.P(
-                                                "Afin de pouvoir procéder au test, veuillez vous munir au préalable des informations suivantes :\n\
-                                                blabla mesure 1 etc....",
+                                                f"Afin de pouvoir procéder au test, veuillez vous munir au préalable des informations suivantes :\n\
+                                                {[col for col in df.columns][:-1]}",
                                                 className="card-text",
                                             )
                                         ]
@@ -63,8 +71,7 @@ layout = dbc.Container([
                     [
                         dbc.AccordionItem(
                             [
-                                html.P("This is the content of the first section"),
-                                dbc.Button("Click here"),
+                                html.P(f"{df.columns}")
                             ],
                             title=html.H4("Faites le Test", className="text-center"),
                             className="bg-light")
