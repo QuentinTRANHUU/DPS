@@ -40,7 +40,7 @@ def create_layout(df_relative_path,page_name):
                                                 html.H4("Avant de commencer", className="card-title text-center p-4"),
                                                 html.P(
                                                     f"Afin de pouvoir procéder au test, veuillez vous munir au préalable des informations suivantes :\n\
-                                                    {[col for col in df.columns][:-1]}",
+                                                    {[col for col in df.columns]}",
                                                     className="card-text",
                                                 )
                                             ]
