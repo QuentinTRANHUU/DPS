@@ -13,4 +13,4 @@ def get_df(relative_path):
     return pd.read_csv(path + relative_path)
 
 def create_formulaire(df):
-    return html.P(f"{df.columns}")
+    return [html.P(f"{df.columns}"), html.P(f"{df.dtypes.values}")]
