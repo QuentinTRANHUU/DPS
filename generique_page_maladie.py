@@ -7,7 +7,7 @@ import formulaire
 
 def create_layout(df_relative_path,page_name):
 
-    df = formulaire.get_df(r"\dataframes\clean_ckd_df.csv")
+    df = formulaire.get_df(df_relative_path)
 
     # Créez la mise en page
     return dbc.Container([
