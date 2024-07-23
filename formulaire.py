@@ -17,7 +17,6 @@ def create_champ_formulaire(df,col):
     if col_type == "O" or (col_type == "int64" and len(df[col].unique()) < 7) :
         return dbc.InputGroup(
                             [
-                                
                                 dbc.InputGroupText(col),
                                 dbc.Select(options=[{"label": val, "value": val} for val in df[col].unique()],
                                            id = col)
@@ -35,4 +34,14 @@ def create_champ_formulaire(df,col):
                             )
 
 def create_formulaire(df):
-    return [html.Div([create_champ_formulaire(df, col) for col in df.columns])]
+    champs_a_remplir = [html.Div([create_champ_formulaire(df, col) for col in df.columns])]
+    submit_button = [dbc.Row(dbc.Col(html.Div(dbc.InputGroup(
+                            [
+                                dbc.Button("Tester",
+                                           color="primary",
+                                           className="mb-3",
+                                           id = "submit_button")
+                            ],
+                            className="mb-3"
+                            )),width={"offset": 9}))]
+    return  champs_a_remplir + submit_button
