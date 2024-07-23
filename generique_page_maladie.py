@@ -4,6 +4,8 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 import formulaire
 
+from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.preprocessing import StandardScaler, OneHotEncoder, OrdinalEncoder, KBinsDiscretizer, KernelCenterer, MaxAbsScaler,LabelBinarizer, LabelEncoder, MinMaxScaler, Normalizer, PowerTransformer, QuantileTransformer, RobustScaler, SplineTransformer, StandardScaler, TargetEncoder
 
 def create_layout(df_relative_path,page_name):
 
@@ -75,3 +77,8 @@ def create_layout(df_relative_path,page_name):
                     width= 6)
         ])
     ])
+    
+    
+#####################################################
+
+#######################################################
