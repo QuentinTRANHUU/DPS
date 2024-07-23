@@ -6,18 +6,18 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 import formulaire
 
-from imblearn.over_sampling import RandomOverSampler
-from sklearn.ensemble import ExtraTreesClassifier, VotingClassifier, AdaBoostClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.linear_model import LogisticRegression, Perceptron
-from sklearn.neighbors import KNeighborsClassifier
-
-from sklearn.preprocessing import StandardScaler, OrdinalEncoder, PowerTransformer, TargetEncoder, OneHotEncoder
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import make_pipeline
-from sklearn.compose import ColumnTransformer
-
 def create_layout(df_relative_path,page_name):
+
+    from imblearn.over_sampling import RandomOverSampler
+    from sklearn.ensemble import ExtraTreesClassifier, VotingClassifier, AdaBoostClassifier
+    from sklearn.tree import DecisionTreeClassifier
+    from sklearn.linear_model import LogisticRegression, Perceptron
+    from sklearn.neighbors import KNeighborsClassifier
+
+    from sklearn.preprocessing import StandardScaler, OrdinalEncoder, PowerTransformer, TargetEncoder, OneHotEncoder
+    from sklearn.model_selection import train_test_split
+    from sklearn.pipeline import make_pipeline
+    from sklearn.compose import ColumnTransformer
 
     df = formulaire.get_df(df_relative_path)
     
@@ -68,16 +68,16 @@ def create_layout(df_relative_path,page_name):
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
     # Train the model
-    pipeline.fit(X_train, y_train)
+    model = pipeline.fit(X_train, y_train)
     
     # Créez la mise en page
-    return dbc.Container([
+    return df,model,dbc.Container([
         
         #------------------------Nom Page--------------------------#
         dbc.Row([
             dbc.Col(html.H1(page_name,
                             className="text-black p-4 text-center",
-                            id = "page_name"))
+                            id = page_name+"_page_name"))
         ]),
         
         #------------------------Avant de commencer--------------------------#
@@ -136,7 +136,7 @@ def create_layout(df_relative_path,page_name):
                     dbc.Accordion(
                         [
                             dbc.AccordionItem(
-                            formulaire.create_formulaire(df),
+                            formulaire.create_formulaire(df,page_name),
                             title=html.H4("Faites le Test", className="text-center"),
                                 className="bg-light")
                         ],
@@ -149,12 +149,12 @@ def create_layout(df_relative_path,page_name):
     
     
 #####################################################
-@callback(
-    Output('resultat','children'),
-    Input("submit_button",'n_clicks'),
-    State("page_name","children"),
-    prevent_initial_call = True
-)
-def get_results(input,state):
-    return html.H4(state, className="card-title text-center p-4"),
+# @callback(
+#     Output('resultat','children'),
+#     Input('submit_button','n_clicks'),
+#     State('page_name','children'),
+#     prevent_initial_call = True
+# )
+# def get_results(input,state):
+#     return html.H4({df.columns}, className='card-title text-center p-4')
 #######################################################
