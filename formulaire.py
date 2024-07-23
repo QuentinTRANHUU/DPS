@@ -12,12 +12,13 @@ def get_df(relative_path):
     #retourne la dataframe choisi via son relative path
     return pd.read_csv(path + relative_path)
 
-def create_champ_formulaire(df,col,page_name):
+def create_champ_formulaire(df,col,page_name, col_name):
+    
     col_type = df[col].dtype
     if col_type == "O" or (col_type == "int64" and len(df[col].unique()) < 7) :
         return dbc.InputGroup(
                             [
-                                dbc.InputGroupText(col),
+                                dbc.InputGroupText(col_name[page_name][col]),
                                 dbc.Select(options=[{"label": val, "value": val} for val in df[col].unique()],
                                            id = {"type": page_name+"_form_input", "index": page_name+"_"+col})
                             ],
@@ -26,15 +27,15 @@ def create_champ_formulaire(df,col,page_name):
     else :
         return dbc.InputGroup(
                                 [
-                                    dbc.InputGroupText(col),
+                                    dbc.InputGroupText(col_name[page_name][col]),
                                     dbc.Input(type="number",
                                            id = {"type": page_name+"_form_input", "index": page_name+"_"+col})
                                 ],
                                 className="mb-3"
                             )
 
-def create_formulaire(df,page_name):
-    champs_a_remplir = [html.Div([create_champ_formulaire(df, col,page_name) for col in df.iloc[:,:-1].columns])]
+def create_formulaire(df, page_name, col_name):
+    champs_a_remplir = [html.Div([create_champ_formulaire(df, col, page_name, col_name) for col in df.iloc[:,:-1].columns])]
     submit_button = [dbc.Row(dbc.Col(html.Div(dbc.InputGroup(
                             [
                                 dbc.Button("Tester",
