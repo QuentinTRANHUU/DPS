@@ -10,7 +10,7 @@ def get_df(relative_path):
     path = os.path.dirname(os.path.realpath(__file__))
     
     #retourne la dataframe choisi via son relative path
-    return pd.read_csv(path + relative_path).iloc[:,1:]
+    return pd.read_csv(path + relative_path)
 
 def create_champ_formulaire(df,col):
     col_type = df[col].dtype
