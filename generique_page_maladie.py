@@ -1,4 +1,4 @@
-from dash import Dash, html, dcc
+from dash import Dash, html, dcc, Input, Output, State, callback, page_registry
 import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
@@ -17,7 +17,8 @@ def create_layout(df_relative_path,page_name):
         #------------------------Nom Page--------------------------#
         dbc.Row([
             dbc.Col(html.H1(page_name,
-                            className="text-black p-4 text-center"))
+                            className="text-black p-4 text-center",
+                            id = "page_name"))
         ]),
         
         #------------------------Avant de commencer--------------------------#
@@ -80,5 +81,12 @@ def create_layout(df_relative_path,page_name):
     
     
 #####################################################
-
+@callback(
+    Output('resultat','children'),
+    Input("submit_button",'n_clicks'),
+    State("page_name","children"),
+    prevent_initial_call = True
+)
+def get_results(input,state):
+    return html.H4(state, className="card-title text-center p-4"),
 #######################################################

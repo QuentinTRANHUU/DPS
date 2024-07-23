@@ -10,7 +10,7 @@ def get_df(relative_path):
     path = os.path.dirname(os.path.realpath(__file__))
     
     #retourne la dataframe choisi via son relative path
-    return pd.read_csv(path + relative_path).iloc[:,1:-1]
+    return pd.read_csv(path + relative_path).iloc[:,1:]
 
 def create_champ_formulaire(df,col):
     col_type = df[col].dtype
@@ -44,4 +44,20 @@ def create_formulaire(df):
                             ],
                             className="mb-3"
                             )),width={"offset": 9}))]
-    return  champs_a_remplir + submit_button
+    resultats = [dbc.Card(
+                        [
+                            dbc.Row(
+                                [
+                                    dbc.Col(
+                                        dbc.CardBody(
+                                                html.H4("Votre résultat", className="card-title text-center p-4"),
+                                                id = "resultat"
+                                        ),
+                                        className="col-md-8",
+                                        width={"offset":2}
+                                    ),
+                                ],
+                                className="bg-warning text-black g-0 d-flex align-items-center",
+                            )
+                        ])]
+    return  champs_a_remplir + submit_button + resultats
