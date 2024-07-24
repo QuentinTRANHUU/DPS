@@ -10,6 +10,19 @@ def get_df(relative_path):
     path = os.path.dirname(os.path.realpath(__file__))
     
     #retourne la dataframe choisi via son relative path
+    
+    if relative_path ==  r"\dataframes\chd_clean.csv":
+        df = pd.read_csv(path + relative_path, dtype = {'sex': "object", 
+                                                         'fbs': "object", 
+                                                         'exang': "object", 
+                                                         'cp': "object", 
+                                                         'restecg': "object", 
+                                                         'slope': "object", 
+                                                         'ca' : "object", 
+                                                         'thal': "object"})
+    else:
+        df = pd.read_csv(path + relative_path)
+    
     return pd.read_csv(path + relative_path)
 
 def create_champ_formulaire(df,col,page_name, col_name):
