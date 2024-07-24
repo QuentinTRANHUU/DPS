@@ -49,7 +49,7 @@ layout = dbc.Container([
                                                 className="card-text"
                                             ),
                                             html.P(
-                                                "Telephone : 06 03 15 48 78",
+                                                "Telephone : 06 12 12 12 12",
                                                 className="card-text"
                                             ),
                                             html.P(

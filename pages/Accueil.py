@@ -159,7 +159,7 @@ layout = dbc.Container([
                                                 ,className="card-text"
                                                 ),
                                             html.P(
-                                                "CONFIDENTIALITÉ : Nous avons à coeur de respecter le secret médical. Les informations que vous saisissez ne sont ni enregistrées ni envoyées, elles ne quitterons jamais votre ordinateur."
+                                                "CONFIDENTIALITÉ : Nous avons à coeur de respecter le secret médical. Les informations que vous saisissez ne sont ni enregistrées ni envoyées, elles ne quitteront jamais votre ordinateur."
                                                 ,className="card-text"
                                                 ),
                                             html.P(
