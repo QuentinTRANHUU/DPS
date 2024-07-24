@@ -39,7 +39,7 @@ layout = dbc.Container([
                                         [
                                             html.H4("Le monde va mal", className="card-title text-center p-2"),
                                             html.P(
-                                                "Les maladies chroniques, telles que le diabète, les maladies cardiovasculaires,les maladies rénales et les maladies hépatiques, touchent des millions de personnes chaque année. Malgré les avancées médicales, trop de diagnostics sont posés tardivement, compromettant la qualité de vie et augmentant les coûts de traitement. Il est primordial d'inverser cette tendance préoccupante",
+                                                "Les maladies chroniques, telles que le diabète, les maladies cardiovasculaires, les maladies rénales et les maladies hépatiques, touchent des millions de personnes chaque année. Malgré les avancées médicales, trop de diagnostics sont posés tardivement, compromettant la qualité de vie et augmentant les coûts de traitement. Il est primordial d'inverser cette tendance préoccupante",
                                                 className="card-text",
                                             )
                                         ]
