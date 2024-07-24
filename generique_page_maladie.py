@@ -13,6 +13,7 @@ def create_layout(df_relative_path, page_name, col_name):
     from sklearn.tree import DecisionTreeClassifier
     from sklearn.linear_model import LogisticRegression, Perceptron
     from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
     from sklearn.preprocessing import StandardScaler, OrdinalEncoder, PowerTransformer, TargetEncoder, OneHotEncoder
     from sklearn.model_selection import train_test_split
@@ -25,13 +26,13 @@ def create_layout(df_relative_path, page_name, col_name):
     model_dict = {"Maladies du Foie": {"model": ExtraTreesClassifier(200),
                                        "scaler": PowerTransformer(),
                                        "encoder": OrdinalEncoder()},
-                  "Maladies Cardiaques": {"model": VotingClassifier(estimators= [('LogisticRegression', LogisticRegression()), 
-                                                                                 ('KNeighborsClassifier', KNeighborsClassifier()), 
-                                                                                 ('Perceptron', Perceptron()), 
-                                                                                 ('AdaBoostClassifier', AdaBoostClassifier())],
-                                                                    voting = 'hard'),
+                  "Maladies Cardiaques": {"model":  LinearDiscriminantAnalysis(n_components = 1,
+                                                                    shrinkage = 0.17,
+                                                                    solver = 'lsqr',
+                                                                    store_covariance = True,
+                                                                    tol =  0.0001),
                                        "scaler": StandardScaler(),
-                                       "encoder": OneHotEncoder(handle_unknown = "ignore")},
+                                       "encoder": OneHotEncoder()},
                   "Diabète": {"model": ExtraTreesClassifier(200),
                                        "scaler": PowerTransformer(),
                                        "encoder": OrdinalEncoder()},
@@ -41,7 +42,7 @@ def create_layout(df_relative_path, page_name, col_name):
                                                                                 criterion= 'entropy',
                                                                                 class_weight = 'balanced'),
                                              "scaler": StandardScaler(),
-                                             "encoder": TargetEncoder()}}
+                                             "encoder": TargetEncoder(smooth = 50)}}
     
     # Définition des types de colonnes:
     numeric_col = [column for column in df.iloc[:, :-1].select_dtypes(include=[np.number]).columns if df.iloc[:, :-1][column].nunique() > len(df.iloc[:, :-1])**(1/2)]
