@@ -122,7 +122,7 @@ def create_layout(df_relative_path, page_name, col_name, image_page):
                                     dbc.Col(
                                         dbc.CardBody(
                                             [
-                                                html.H4(f"Caractéristiques du modèle :", className="card-title text-center p-4"),
+                                                html.H4(f"Statistiques du modèle :", className="card-title text-center p-4"),
                                                 html.P(f"Accuracy score de {score * 100 :.2f}%",
                                                     className="card-text text-center",
                                                 ),

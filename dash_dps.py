@@ -63,7 +63,10 @@ app.layout = dbc.Container(
         dbc.Row(
             [
                 #colonne vide pour corriger l'alignement
-                dbc.Col(width=9),
+                dbc.Col(
+                    [dbc.Row(html.P("Powered by Vivi Data Consulting, with love ❤️", className = "text-white", style = {"font-style": "italic"}))],
+                    align = "end",
+                    width=9),
                 
                 # Logo
                 dbc.Col(html.Img(src = r"\assets\images\WCS_logo.png",

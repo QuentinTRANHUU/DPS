@@ -22,7 +22,7 @@ layout = dbc.Container([
                                         [
                                             html.H4("Le monde va mal", className="card-title text-center p-2"),
                                             html.P(
-                                                "Les maladies chroniques, telles que le diabète, les maladies cardiovasculaires,les maladies rénales et les maladies hépatiques, touchent des millions de personnes chaque année. Malgré les avancées médicales, trop de diagnostics sont posés tardivement, compromettant la qualité de vie et augmentant les coûts de traitement. Il est primordial d'inverser cette tendance préoccupante",
+                                                "Les maladies chroniques, telles que le diabète, les maladies cardiovasculaires, les maladies rénales et les maladies hépatiques, touchent des millions de personnes chaque année. Malgré les avancées médicales, trop de diagnostics sont posés tardivement, compromettant la qualité de vie et augmentant les coûts de traitement. Il est primordial d'inverser cette tendance préoccupante",
                                                 className="card-text",
                                             )
                                         ]
@@ -142,7 +142,7 @@ layout = dbc.Container([
                                                 ,className="card-text"
                                                 ),
                                             html.P(
-                                                "CONFIDENTIALITÉ : Nous avons à cœur de respecter le secret médical. Les informations que vous saisissez ne sont ni enregistrées ni envoyées, elles ne quitterons jamais votre ordinateur."
+                                                "CONFIDENTIALITÉ : Nous avons à coeur de respecter le secret médical. Les informations que vous saisissez ne sont ni enregistrées ni envoyées, elles ne quitteront jamais votre ordinateur."
                                                 ,className="card-text"
                                                 ),
                                             html.P(
