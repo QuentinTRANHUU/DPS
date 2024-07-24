@@ -28,7 +28,6 @@ layout = dbc.Container([
     #------------------------Contact--------------------------#
     
     dbc.Row([
-        dbc.Col(width= 2),
         dbc.Col(
                 dbc.Card(
                     [
@@ -39,12 +38,12 @@ layout = dbc.Container([
                                         src=r"\assets\images\doctor.jpg",
                                         className="img-fluid rounded-start",
                                     ),
-                                    className="col-md-4",
+                                    className="col-md-6",
                                 ),
                                 dbc.Col(
                                     dbc.CardBody(
                                         [
-                                            html.H4("Contact", className="card-title text-center p-4"),
+                                            html.H4("Contact", className="card-title text-center p-2"),
                                             html.P(
                                                 "Email : datapowerscreening@gmail.com",
                                                 className="card-text"
@@ -54,12 +53,12 @@ layout = dbc.Container([
                                                 className="card-text"
                                             ),
                                             html.P(
-                                                "Adresse : 2 rue Estouchet,33400 Villenave d'Ornon",
+                                                "Adresse : 221B Baker Street, Londres",
                                                 className="card-text"
                                             )
                                         ]
                                     ),
-                                    className="col-md-8",
+                                    className="col-md-6",
                                 ),
                             ],
                             className="bg-warning text-black g-0 d-flex align-items-center",
@@ -67,8 +66,7 @@ layout = dbc.Container([
                     ],
     className="mb-3",
     ),
-            width= 7),
-        dbc.Col(width= 3)
+    width= {"size":8,"offset":2})
     ]),
 ])
     #-------------Formulaire de questions ---------------#

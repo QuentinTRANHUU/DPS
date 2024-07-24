@@ -194,8 +194,8 @@ layout = dbc.Container([
 
     dbc.Row([
                 dbc.Col(width = 3),
-                dbc.Col(html.H1("Ils témoignent",
-                                className="bg-info text-black p-4 text-center"),
+                dbc.Col(html.H2("Ils témoignent",
+                                className="bg-light text-black p-4 text-center"),
                         width = 6)
     ]),
 
