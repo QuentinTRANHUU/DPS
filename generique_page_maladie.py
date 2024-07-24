@@ -158,22 +158,7 @@ def create_layout(df_relative_path, page_name, col_name, image_page):
                         ),
                     className="mb-3",
                     width= 6)
-        ]),
-        dbc.Row([
-            dbc.Col(width= 3),
-            dbc.Col(
-                    
-                    dbc.Accordion(
-                        [
-                            dbc.AccordionItem(
-                            title=html.H4("Faites le Test", className="text-center"),
-                                className="bg-light")
-                        ],
-                        start_collapsed=True
-                        ),
-                    className="mb-3",
-                    width= 6)
-            ])
+        ])
     ])
     
     
