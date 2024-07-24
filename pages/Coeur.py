@@ -11,21 +11,21 @@ page_name = "Maladies Cardiaques"
 
 col_name = {"Maladies Cardiaques": {"age": "Age",
                                     "sex": "Genre",
-                                    "cp": "",
-                                    "trestbps": "",
-                                    "chol": "",
-                                    "restecg": "",
-                                    "thalach": "",
-                                    "exang": "",
-                                    "oldpeak": "",
-                                    "slope": "",
-                                    "ca": "",
-                                    "thal": "",
+                                    "cp": "Type de douleur thoracique",
+                                    "trestbps": "Pression artérielle au repos",
+                                    "chol": "Cholestérol sérique",
+                                    "restecg": "Résultats électrocardiographiques au repos",
+                                    "thalach": "Fréquence cardiaque maximale atteinte",
+                                    "exang": "Angine induite par l'exercice",
+                                    "oldpeak": "Dépression du segment ST induite par l'exercice",
+                                    "slope": "Pente du segment ST à l'effort maximal",
+                                    "ca": "Nombre de vaisseaux majeurs colorés par fluoroscopie",
+                                    "thal": "Thalassémie",
                                     "target": {0: "Sain", 1: "Maladie Chronique du coeur"}}
     }
     
 # Créez la mise en page
-df, model, layout= generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
+df, model, score, layout= generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
 
 @callback(
     Output(page_name+'_resultat','children'),
@@ -36,4 +36,7 @@ df, model, layout= generique_page_maladie.create_layout(df_relative_path, page_n
 def get_results(input,states):
     df_test = pd.DataFrame([states], columns=df.iloc[:,:-1].columns)
     
-    return html.H4(f'{model.predict(df_test)[0]}', className='card-title text-center p-4')
+    result = col_name[page_name]["target"][model.predict(df_test)[0]]
+    
+    return html.H4(f'{result} (probabilité de {model.predict_proba(df_test)[0][0 if result == "Sain" else 1] * 100 :.2f}%)', className='card-title text-center p-4')
+        # html.P(f'Fiabilité de {score * 100 :.2f}%', className='card-title text-center p-4')

@@ -20,7 +20,7 @@ col_name = {"Diabète": {"Pregnancies": "Nombre de Grossesses",
             }
     
 # Créez la mise en page
-df, model, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
+df, model, score, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
 
 @callback(
     Output(page_name+'_resultat','children'),
@@ -31,4 +31,6 @@ df, model, layout = generique_page_maladie.create_layout(df_relative_path, page_
 def get_results(input,states):
     df_test = pd.DataFrame([states], columns=df.iloc[:,:-1].columns)
     
-    return html.H4(f'{model.predict(df_test)[0]}', className='card-title text-center p-4')
+    result = col_name[page_name]["Outcome"][model.predict(df_test)[0]]
+    
+    return html.H4(f'{result} (probabilité de {model.predict_proba(df_test)[0][0 if result == "Absence de diabète" else 1] * 100 :.2f}%)', className='card-title text-center p-4')

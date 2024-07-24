@@ -31,7 +31,7 @@ def create_layout(df_relative_path, page_name, col_name):
                                                                                  ('AdaBoostClassifier', AdaBoostClassifier())],
                                                                     voting = 'hard'),
                                        "scaler": StandardScaler(),
-                                       "encoder": OneHotEncoder()},
+                                       "encoder": OneHotEncoder(handle_unknown = "ignore")},
                   "Diabète": {"model": ExtraTreesClassifier(200),
                                        "scaler": PowerTransformer(),
                                        "encoder": OrdinalEncoder()},
@@ -70,13 +70,17 @@ def create_layout(df_relative_path, page_name, col_name):
     # Train the model
     model = pipeline.fit(X_train, y_train)
     
+    # Score of the model
+    score = model.score(X_test, y_test)
+    
+    # Just putting the columns in string format
     col_in_text = ""
     for col in df.iloc[:, :-1].columns:
         col_in_text += col_name[page_name][col] + ", "
     col_in_text = col_in_text[:-2] + "."
     
     # Créez la mise en page
-    return df,model,dbc.Container([
+    return df, model, score, dbc.Container([
         
         #------------------------Nom Page--------------------------#
         dbc.Row([
