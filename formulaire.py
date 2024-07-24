@@ -64,14 +64,14 @@ def create_formulaire(df, page_name, col_name):
                                 [
                                     dbc.Col(
                                         dbc.CardBody(
-                                                html.H4("Votre résultat", className="card-title text-center p-4"),
+                                                html.H2("Votre résultat", className="card-title text-center p-4"),
                                                 id = page_name + "_resultat"
                                         ),
                                         className="col-md-8",
                                         width={"offset":2}
                                     ),
                                 ],
-                                className="bg-warning text-black g-0 d-flex align-items-center",
+                                className="bg-warning text-white g-0 d-flex align-items-center",
                             )
                         ])]
     return  champs_a_remplir + submit_button + resultats

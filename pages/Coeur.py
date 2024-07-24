@@ -43,4 +43,4 @@ def get_results(input,states):
         
     result = col_name[page_name]["target"][model.predict(df_test)[0]]
     
-    return html.H4(f'{result} (probabilité de {model.predict_proba(df_test)[0][0 if result == "Sain" else 1] * 100 :.2f}%)', className='card-title text-center p-4')
+    return html.H2(f'{result} (probabilité de {model.predict_proba(df_test)[0][0 if result == "Sain" else 1] * 100 :.2f}%)', className='text-white card-title text-center p-4')
