@@ -10,6 +10,8 @@ df_relative_path = r"\dataframes\chd_clean.csv"
 
 page_name = "Maladies Cardiaques"
 
+image_page =  r"\assets\images\maladies-cardiovasculaires.png"
+
 col_name = {"Maladies Cardiaques": {"age": "Age",
                                     "sex": "Genre",
                                     "cp": "Type de douleur thoracique",
@@ -26,7 +28,7 @@ col_name = {"Maladies Cardiaques": {"age": "Age",
     }
     
 # Créez la mise en page
-df, model, score, precision, falseNeg, layout= generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
+df, model, score, precision, falseNeg, layout= generique_page_maladie.create_layout(df_relative_path, page_name, col_name,image_page)
 
 @callback(
     Output(page_name+'_resultat','children'),

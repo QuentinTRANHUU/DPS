@@ -11,6 +11,8 @@ df_relative_path = r"\dataframes\liver_cleaned.csv"
 
 page_name = "Maladies du Foie"
 
+image_page = r"\assets\images\liver.jpeg"
+
 col_name = {"Maladies du Foie": {"Age": "Age",
                                 "Gender": "Genre",
                                 "Total_Bilirubin": "Bilirubine Totale",
@@ -21,7 +23,7 @@ col_name = {"Maladies du Foie": {"Age": "Age",
                 }
     
 # Créez la mise en page
-df, model, score, precision, falseNeg, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
+df, model, score, precision, falseNeg, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name,image_page)
 
 @callback(
     Output(page_name+'_resultat','children'),

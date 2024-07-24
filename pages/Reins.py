@@ -41,7 +41,7 @@ col_name = {"Maladie Rénale Chronique": {"age" : "Age",
     }}
     
 # Créez la mise en page
-df, model, score, precision, falseNeg, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
+df, model, score, precision, falseNeg, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name,image_page)
 
 @callback(
     Output(page_name+'_resultat','children'),

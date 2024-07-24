@@ -23,7 +23,7 @@ col_name = {"Diabète": {"Pregnancies": "Nombre de Grossesses",
 image_page = r"\assets\images\Photo_diabete.jpg"
     
 # Créez la mise en page
-df, model, score, precision, falseNeg, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
+df, model, score, precision, falseNeg, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name,image_page)
 
 @callback(
     Output(page_name+'_resultat','children'),
