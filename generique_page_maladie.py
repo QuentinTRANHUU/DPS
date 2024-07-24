@@ -19,6 +19,7 @@ def create_layout(df_relative_path, page_name, col_name):
     from sklearn.model_selection import train_test_split
     from sklearn.pipeline import make_pipeline
     from sklearn.compose import ColumnTransformer
+    from sklearn.metrics import precision_score, confusion_matrix
 
     df = formulaire.get_df(df_relative_path)
     
@@ -73,6 +74,9 @@ def create_layout(df_relative_path, page_name, col_name):
     
     # Score of the model
     score = model.score(X_test, y_test)
+    precision = precision_score(y_test, model.predict(X_test))
+    confus = confusion_matrix(y_test, model.predict(X_test), labels = model.classes_)
+    falseNeg = confus[1][0] / (confus[0][0] + confus[1][0])
     
     # Just putting the columns in string format
     col_in_text = ""
@@ -81,7 +85,7 @@ def create_layout(df_relative_path, page_name, col_name):
     col_in_text = col_in_text[:-2] + "."
     
     # Créez la mise en page
-    return df, model, score, dbc.Container([
+    return df, model, score, precision, falseNeg, dbc.Container([
         
         #------------------------Nom Page--------------------------#
         dbc.Row([
@@ -145,7 +149,22 @@ def create_layout(df_relative_path, page_name, col_name):
                         ),
                     className="mb-3",
                     width= 6)
-        ])
+        ]),
+        dbc.Row([
+            dbc.Col(width= 3),
+            dbc.Col(
+                    
+                    dbc.Accordion(
+                        [
+                            dbc.AccordionItem(
+                            title=html.H4("Faites le Test", className="text-center"),
+                                className="bg-light")
+                        ],
+                        start_collapsed=True
+                        ),
+                    className="mb-3",
+                    width= 6)
+            ])
     ])
     
     
