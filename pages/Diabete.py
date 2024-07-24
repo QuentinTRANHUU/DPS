@@ -9,8 +9,18 @@ df_relative_path = r"\dataframes\diabete_clean.csv"
 
 page_name = "Diabète"
 
+col_name = {"Diabète": {"Pregnancies": "Nombre de Grossesses",
+                        "Glucose": "Glucose",
+                        "BloodPressure": "Pression Sanguine",
+                        "Insulin": "Insuline",
+                        "BMI": "Indice de Masse Corporel",
+                        "DiabetesPedigreeFunction": "Fonction d'hérédité",
+                        "Age": "Age",
+                        "Outcome": {0: "Absence de diabète", 1: "Présence de diabète"}}
+            }
+    
 # Créez la mise en page
-df, model, layout = generique_page_maladie.create_layout(df_relative_path, page_name)
+df, model, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
 
 @callback(
     Output(page_name+'_resultat','children'),

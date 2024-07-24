@@ -10,8 +10,17 @@ df_relative_path = r"\dataframes\liver_cleaned.csv"
 
 page_name = "Maladies du Foie"
 
+col_name = {"Maladies du Foie": {"Age": "Age",
+                                "Gender": "Genre",
+                                "Total_Bilirubin": "Bilirubine Totale",
+                                "Alkaline_Phosphotase": "Alkaline Phosphotase",
+                                "Alamine_Aminotransferase": "Alamine Aminotransferase",
+                                "Albumin_and_Globulin_Ratio": "Taux d'Albumine sur Globuline",
+                                "Dataset": {2: "Sain", 1: "Maladie Chronique du foie"}}
+                }
+    
 # Créez la mise en page
-df, model, layout = generique_page_maladie.create_layout(df_relative_path, page_name)
+df, model, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
 
 @callback(
     Output(page_name+'_resultat','children'),

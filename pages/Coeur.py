@@ -9,8 +9,23 @@ df_relative_path = r"\dataframes\chd_clean.csv"
 
 page_name = "Maladies Cardiaques"
 
+col_name = {"Maladies Cardiaques": {"age": "Age",
+                                    "sex": "Genre",
+                                    "cp": "",
+                                    "trestbps": "",
+                                    "chol": "",
+                                    "restecg": "",
+                                    "thalach": "",
+                                    "exang": "",
+                                    "oldpeak": "",
+                                    "slope": "",
+                                    "ca": "",
+                                    "thal": "",
+                                    "target": {0: "Sain", 1: "Maladie Chronique du coeur"}}
+    }
+    
 # Créez la mise en page
-df, model, layout= generique_page_maladie.create_layout(df_relative_path, page_name)
+df, model, layout= generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
 
 @callback(
     Output(page_name+'_resultat','children'),

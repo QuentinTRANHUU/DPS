@@ -10,8 +10,35 @@ df_relative_path = r"\dataframes\clean_ckd_df.csv"
 
 page_name = "Maladie Rénale Chronique"
 
+col_name = {"Maladie Rénale Chronique": {"age" : "Age",
+                                        "bp" : "Pression arterielle",
+                                        "sg" : "Gravité spécifique",
+                                        "al" : "Albumine (taux sanguin)",
+                                        "su" : "Glycémie",
+                                        "rbc" : "Globules rouges (nombre)",
+                                        "pc" : "Globules blancs",
+                                        "pcc" : "Présence d'aggrégats de globules blancs",
+                                        "ba" : "Présence de bactéries",
+                                        "bgr" : "Glycémie aléatoire",
+                                        "bu" : "Urée sanguine",
+                                        "sc" : "Creatinine sanguine",
+                                        "sod" : "Sodium",
+                                        "pot" : "Potassium",
+                                        "hemo" : "Taux d'hémoglobine",
+                                        "pcv" : "Volume globulaire moyen",
+                                        "wc" : "Globule blancs (nombre)",
+                                        "rc" : "Globule rouges (nombre)",
+                                        "htn" : "Présence d'hypertension",
+                                        "dm" : "Présence de diabete sucré",
+                                        "cad" : "Présence de maladies cardiaques",
+                                        "appet" : "Niveaux d'appétit",
+                                        "pe" : "Présence d'oedème aux pieds",
+                                        "ane" : "Présence d'anémie",
+                                        "classification" : {"not CDK": "Sain", "CDK":"Maladie Chronique des reins"}
+    }}
+    
 # Créez la mise en page
-df, model, layout = generique_page_maladie.create_layout(df_relative_path, page_name)
+df, model, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
 
 @callback(
     Output(page_name+'_resultat','children'),

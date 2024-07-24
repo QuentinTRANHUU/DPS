@@ -6,7 +6,7 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 import formulaire
 
-def create_layout(df_relative_path,page_name):
+def create_layout(df_relative_path, page_name, col_name):
 
     from imblearn.over_sampling import RandomOverSampler
     from sklearn.ensemble import ExtraTreesClassifier, VotingClassifier, AdaBoostClassifier
@@ -70,6 +70,11 @@ def create_layout(df_relative_path,page_name):
     # Train the model
     model = pipeline.fit(X_train, y_train)
     
+    col_in_text = ""
+    for col in df.iloc[:, :-1].columns:
+        col_in_text += col_name[page_name][col] + ", "
+    col_in_text = col_in_text[:-2] + "."
+    
     # Créez la mise en page
     return df,model,dbc.Container([
         
@@ -102,18 +107,9 @@ def create_layout(df_relative_path,page_name):
                                                 html.H4("Avant de commencer", className="card-title text-center p-4"),
                                                 html.P(
                                                     f"Afin de pouvoir procéder au test, veuillez vous munir au préalable des informations suivantes :\n\
-                                                    {[col for col in df.columns]}",
+                                                    {col_in_text}",
                                                     className="card-text",
-                                                ),
-                                                html.P(f"y is {y.columns}:\n\
-                                                    and X is {[col for col in X.columns]} with {len(X)} lines",
-                                                    className="card-text",),
-                                                html.P(f"The model is {model_dict[page_name]['model']}:\n\
-                                                        , the scaler is {model_dict[page_name]['scaler']} and \
-                                                        the encoder is {model_dict[page_name]['encoder']} \
-                                                            num col :{numeric_col} \
-                                                                cat col :{cat_col}",
-                                                    className="card-text")
+                                                )
                                             ]
                                         ),
                                         className="col-md-8",
@@ -136,7 +132,7 @@ def create_layout(df_relative_path,page_name):
                     dbc.Accordion(
                         [
                             dbc.AccordionItem(
-                            formulaire.create_formulaire(df,page_name),
+                            formulaire.create_formulaire(df,page_name, col_name),
                             title=html.H4("Faites le Test", className="text-center"),
                                 className="bg-light")
                         ],
