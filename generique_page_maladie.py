@@ -6,7 +6,7 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 import formulaire
 
-def create_layout(df_relative_path, page_name, col_name):
+def create_layout(df_relative_path, page_name, col_name, image_page):
 
     from imblearn.over_sampling import RandomOverSampler
     from sklearn.ensemble import ExtraTreesClassifier, VotingClassifier, AdaBoostClassifier
@@ -89,15 +89,24 @@ def create_layout(df_relative_path, page_name, col_name):
         
         #------------------------Nom Page--------------------------#
         dbc.Row([
-            dbc.Col(html.H1(page_name,
-                            className="text-black p-4 text-center",
-                            id = page_name+"_page_name"))
-        ]),
+            dbc.Col(),
+            dbc.Col(
+                dbc.Card(
+                    dbc.CardBody(
+                                html.H2(page_name,
+                                        className="card-title text-black text-center p-2",
+                                        id = page_name+"_page_name")
+                                ),
+                    className="bg-light"),
+                width = {"size" : "auto"}
+                ),
+            dbc.Col(),
+            ],
+            className="m-5"),
         
         #------------------------Avant de commencer--------------------------#
         
         dbc.Row([
-            dbc.Col(width= 3),
             dbc.Col(
                     dbc.Card(
                         [
@@ -105,10 +114,10 @@ def create_layout(df_relative_path, page_name, col_name):
                                 [
                                     dbc.Col(
                                         dbc.CardImg(
-                                            src=r"\assets\images\doctor.jpg",
+                                            src=image_page,
                                             className="img-fluid rounded-start",
                                         ),
-                                        className="col-md-4",
+                                        className="col-md-6",
                                     ),
                                     dbc.Col(
                                         dbc.CardBody(
@@ -117,11 +126,11 @@ def create_layout(df_relative_path, page_name, col_name):
                                                 html.P(
                                                     f"Afin de pouvoir procéder au test, veuillez vous munir au préalable des informations suivantes :\n\
                                                     {col_in_text}",
-                                                    className="card-text",
+                                                    className="card-text text-center",
                                                 )
                                             ]
                                         ),
-                                        className="col-md-8",
+                                        className="col-md-6",
                                     ),
                                 ],
                                 className="bg-warning text-black g-0 d-flex align-items-center",
@@ -129,7 +138,7 @@ def create_layout(df_relative_path, page_name, col_name):
                         ],
         className="mb-3",
         ),
-                width= 6)
+        width= {"size":8,"offset":2})
         ]),
 
         #------------------------Faites le Test--------------------------#

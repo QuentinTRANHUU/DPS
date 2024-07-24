@@ -11,6 +11,8 @@ df_relative_path = r"\dataframes\clean_ckd_df.csv"
 
 page_name = "Maladie Rénale Chronique"
 
+image_page = r"\assets\images\maladie_reinale.jpeg"
+
 col_name = {"Maladie Rénale Chronique": {"age" : "Age",
                                         "bp" : "Pression arterielle",
                                         "sg" : "Gravité spécifique",
