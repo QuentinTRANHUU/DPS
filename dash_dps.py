@@ -31,19 +31,19 @@ app.layout = dbc.Container(
                                     dbc.Col(html.H3("   ")),
                                     dbc.Col(html.H3("   "), width = 3)
                     ], align = "center")),
-                    dbc.NavItem(dbc.NavLink("Informations", href="/informations")),
+                    dbc.NavItem(dbc.NavLink("Informations", href="/informations",className="text-white")),
                     dbc.DropdownMenu(
                         children=[
-                            dbc.DropdownMenuItem("Diabète", href = "/diabete"),
-                            dbc.DropdownMenuItem("Maladies du foie", href = "/foie"),
-                            dbc.DropdownMenuItem("Maladie rénale chronique", href = "/reins"),
-                            dbc.DropdownMenuItem("Maladies cardiaques", href = "/coeur"),
+                            dbc.DropdownMenuItem("Diabète", href = "/diabete",className="text-black"),
+                            dbc.DropdownMenuItem("Maladies du foie", href = "/foie",className="text-black"),
+                            dbc.DropdownMenuItem("Maladie rénale chronique", href = "/reins",className="text-black"),
+                            dbc.DropdownMenuItem("Maladies cardiaques", href = "/coeur",className="text-black"),
                         ],
                         nav = True,
                         in_navbar = True,
-                        menu_variant = "bg-secondary",
                         align_end = True,
                         label = "Tests",
+                        className="text-light"
                     ),
                 ],
                 brand = dbc.Row(
