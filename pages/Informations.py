@@ -8,22 +8,6 @@ register_page(__name__)
 
 # Créez la mise en page
 layout = dbc.Container([
-    
-    #------------------------Nom Page--------------------------#
-    dbc.Row([
-    dbc.Col(),
-    dbc.Col(
-        dbc.Card(
-            dbc.CardBody(
-                        html.H2("Informations",
-                                className="card-title text-black text-center p-2")
-                        ),
-            className="bg-light"),
-        width = {"size" : "auto"}
-        ),
-    dbc.Col(),
-    ],
-    className="m-5"),
 
     #------------------------Contact--------------------------#
     
@@ -64,7 +48,7 @@ layout = dbc.Container([
                             className="bg-secondary text-black g-0 d-flex align-items-center",
                         )
                     ],
-    className="mb-3",
+    className="m-5",
     ),
     width= {"size":8,"offset":2})
     ]),

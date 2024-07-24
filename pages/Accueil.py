@@ -9,23 +9,6 @@ register_page(__name__)
 # Créez la mise en page
 layout = dbc.Container([
     
-    #------------------------Nom Page--------------------------#
-    dbc.Row([
-    dbc.Col(),
-    dbc.Col(
-        dbc.Card(
-            dbc.CardBody(
-                        html.H2("Accueil",
-                                className="card-title text-black text-center p-2")
-                        ),
-            className="bg-light"),
-        width = {"size" : "auto"}
-        ),
-    dbc.Col(),
-    ],
-    className="m-5"),
-
-    
     #------------------------Le monde va mal--------------------------#
     
     dbc.Row([
@@ -58,7 +41,7 @@ layout = dbc.Container([
                             className="bg-dark text-white g-0 d-flex align-items-center  text-center",
                         )
                     ],
-    className="mb-3",
+    className="m-5",
     ),
     width= {"size":11,"offset":0})
     ]),
@@ -159,7 +142,7 @@ layout = dbc.Container([
                                                 ,className="card-text"
                                                 ),
                                             html.P(
-                                                "CONFIDENTIALITÉ : Nous avons à coeur de respecter le secret médical. Les informations que vous saisissez ne sont ni enregistrées ni envoyées, elles ne quitterons jamais votre ordinateur."
+                                                "CONFIDENTIALITÉ : Nous avons à cœur de respecter le secret médical. Les informations que vous saisissez ne sont ni enregistrées ni envoyées, elles ne quitterons jamais votre ordinateur."
                                                 ,className="card-text"
                                                 ),
                                             html.P(
@@ -202,10 +185,10 @@ layout = dbc.Container([
                 dbc.Col(width = 3),
                 dbc.Col(dbc.Carousel(
                             items=[
-                                {"key": "1", "caption" : "Des problèmes urinaires ? Vous n'êtes pas seuls !" , "src": r"/assets/images/ex_carrou_1.jpeg"},
-                                {"key": "2", "src": r"/assets/images/ex_carrou_2.jpeg"},
-                                {"key": "3", "src": r"/assets/images/ex_carrou_3.jpeg"},
-                                {"key": "4", "src": r"\assets\images\doctor.jpg"},
+                                {"key": "1", "caption" : "DPS, un ami, un confident, un amour de technologie." , "src": r"/assets\images\dr_group.png"},
+                                {"key": "2", "caption" : "Avant DPS, j'avais peur de mal diagnostiquer.", "src": r"/assets\images\dr_soucis.png"},
+                                {"key": "3", "caption" : "Je fais de jolis diagnostiques, DPS en fait de vrais !", "src": r"/assets\images\dr_GPT.png"},
+                                {"key": "4", "caption" : "Avec DPS, la chasse aux maladies chroniques est facile.", "src": r"\assets\images\Dr_chat.png"},
                             ],
                             controls=True,
                             indicators=True
