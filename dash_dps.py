@@ -5,51 +5,61 @@ import dash_bootstrap_components as dbc
 
 # Création de l'application Dash
 app = Dash(__name__, external_stylesheets=[dbc.themes.SPACELAB], use_pages=True)
+app.title = 'DPS'
+app._favicon = (r"\assets\favicon.ico")
 
 
 # Créez la mise en page
 app.layout = dbc.Container(
     [
-            
-    #------------------------Header--------------------------#
-    
-        dbc.Row(
-            [
-                # Logo
-                dbc.Col(html.Img(src = r"\assets\images\Logo.png",
-                                className="img-rounded bg-primary h-100"),
-                        style={"height": "15vh"}
-                        ),
-                
-                # Devise
-                dbc.Col(html.H1('La Data au service de la Santé.',
-                                className="bg-primary text-white p-4 text-center h-100"),
-                        style={"height": "15vh"}
-                        ),
-                #colonne vide pour corriger l'alignement
-                dbc.Col()
-            ],
-        # background du header
-        className="bg-primary"),
 
     #------------------------Nav Bar--------------------------#
-    
-        dbc.Row([
-            dbc.ButtonGroup(
-                [
-                    dbc.Button("Accueil", outline=True, color="dark", href = "/accueil",className="bg-light"),
-                    dbc.Button("Diabète", outline=True, color="dark", href = "/diabete",className="bg-light"),
-                    dbc.Button("Maladies du foie", outline=True, color="dark", href = "/foie",className="bg-light"),
-                    dbc.Button("Maladie rénale chronique", outline=True, color="dark", href = "/reins",className="bg-light"),
-                    dbc.Button("Maladies cardiaque", outline=True, color="dark", href = "/coeur",className="bg-light"),
-                    dbc.Button("Informations", outline=True, color="dark", href = "/informations",className="bg-light"),
-                ])
-        ],
-        # background due la Nav Bar
-        className="bg-primary"),
-        
-        #espace sous la nav bar
-        dbc.Row(style={"height": "1vh"}),
+            dbc.NavbarSimple(
+                children=[
+                    dbc.NavItem(dbc.Row(
+                                [
+                                    dbc.Col(html.H3("La Data au service de la Santé", className = "text-white text-center"), width={"size" : "auto"}),
+                                    dbc.Col(html.H3("   ")),
+                                    dbc.Col(html.H3("   ")),
+                                    dbc.Col(html.H3("   ")),
+                                    dbc.Col(html.H3("   ")),
+                                    dbc.Col(html.H3("   ")),
+                                    dbc.Col(html.H3("   ")),
+                                    dbc.Col(html.H3("   ")),
+                                    dbc.Col(html.H3("   ")),
+                                    dbc.Col(html.H3("   ")),
+                                    dbc.Col(html.H3("   ")),
+                                    dbc.Col(html.H3("   "), width = 3)
+                    ], align = "center")),
+                    dbc.NavItem(dbc.NavLink("Informations", href="/informations")),
+                    dbc.DropdownMenu(
+                        children=[
+                            dbc.DropdownMenuItem("Diabète", href = "/diabete"),
+                            dbc.DropdownMenuItem("Maladies du foie", href = "/foie"),
+                            dbc.DropdownMenuItem("Maladie rénale chronique", href = "/reins"),
+                            dbc.DropdownMenuItem("Maladies cardiaques", href = "/coeur"),
+                        ],
+                        nav = True,
+                        in_navbar = True,
+                        menu_variant = "bg-secondary",
+                        align_end = True,
+                        label = "Tests",
+                    ),
+                ],
+                brand = dbc.Row(
+                                [
+                                    dbc.Col(html.Img(src = r"\assets\images\Logo.png", height="60px")),
+                                    dbc.Col(dbc.NavbarBrand("Accueil")),
+                                ],
+                                align="center",
+                            ),
+                brand_href="/accueil",
+                color="primary",
+                dark=True,
+                sticky = "top",
+                style = {"align-items": "center"}
+            ),
+
     
     #------------------------Content--------------------------#
     
