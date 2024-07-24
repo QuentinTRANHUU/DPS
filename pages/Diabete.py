@@ -18,6 +18,8 @@ col_name = {"Diabète": {"Pregnancies": "Nombre de Grossesses",
                         "Age": "Age",
                         "Outcome": {0: "Absence de diabète", 1: "Présence de diabète"}}
             }
+
+image_page = r"\assets\images\Photo_diabete.jpg"
     
 # Créez la mise en page
 df, model, score, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
