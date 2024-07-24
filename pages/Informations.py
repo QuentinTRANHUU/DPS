@@ -36,8 +36,16 @@ layout = dbc.Container([
                                         [
                                             html.H4("Contact", className="card-title text-center p-4"),
                                             html.P(
-                                                "blabalbalbalaipoehfagçfdaohdfghblabalbalbalaipoehfagçfdaohdfghblabalbalbalaipoehfagçfdaohdfgh",
-                                                className="card-text",
+                                                "Email : datapowerscreening@gmail.com",
+                                                className="card-text"
+                                            ),
+                                            html.P(
+                                                "Telephone : 06 03 15 48 78",
+                                                className="card-text"
+                                            ),
+                                            html.P(
+                                                "Adresse : 2 rue Estouchet,33400 Villenave d'Ornon",
+                                                className="card-text"
                                             )
                                         ]
                                     ),
@@ -53,3 +61,4 @@ layout = dbc.Container([
         dbc.Col(width= 3)
     ]),
 ])
+    #-------------Formulaire de questions ---------------#

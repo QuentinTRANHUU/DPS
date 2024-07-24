@@ -5,6 +5,8 @@ import dash_bootstrap_components as dbc
 
 # Création de l'application Dash
 app = Dash(__name__, external_stylesheets=[dbc.themes.SPACELAB], use_pages=True)
+app.title = 'DPS'
+app._favicon = (r"\assets\favicon.ico")
 
 
 # Créez la mise en page
