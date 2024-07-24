@@ -122,10 +122,14 @@ def create_layout(df_relative_path, page_name, col_name, image_page):
                                     dbc.Col(
                                         dbc.CardBody(
                                             [
-                                                html.H4("Avant de commencer", className="card-title text-center p-4"),
-                                                html.P(
-                                                    f"Afin de pouvoir procéder au test, veuillez vous munir au préalable des informations suivantes :\n\
-                                                    {col_in_text}",
+                                                html.H4(f"Notre modèle pour {page_name}:", className="card-title text-center p-4"),
+                                                html.P(f"Accuracy score de {score * 100 :.2f}%",
+                                                    className="card-text text-center",
+                                                ),
+                                                html.P(f"Précision de {precision * 100 :.2f}%",
+                                                    className="card-text text-center",
+                                                ),
+                                                html.P(f"Taux de faux négatifs de {falseNeg * 100 :.2f}%",
                                                     className="card-text text-center",
                                                 )
                                             ]
@@ -133,7 +137,7 @@ def create_layout(df_relative_path, page_name, col_name, image_page):
                                         className="col-md-6",
                                     ),
                                 ],
-                                className="bg-warning text-black g-0 d-flex align-items-center",
+                                className="bg-light text-black g-0 d-flex align-items-center",
                             )
                         ],
         className="mb-3",
@@ -144,7 +148,6 @@ def create_layout(df_relative_path, page_name, col_name, image_page):
         #------------------------Faites le Test--------------------------#
 
         dbc.Row([
-            dbc.Col(width= 3),
             dbc.Col(
                     
                     dbc.Accordion(
@@ -157,7 +160,7 @@ def create_layout(df_relative_path, page_name, col_name, image_page):
                         start_collapsed=True
                         ),
                     className="mb-3",
-                    width= 6)
+                    width= {"size":8,"offset":2})
         ])
     ])
     

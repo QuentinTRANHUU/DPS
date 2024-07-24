@@ -43,13 +43,4 @@ def get_results(input,states):
         
     result = col_name[page_name]["target"][model.predict(df_test)[0]]
     
-    return html.H4(f'{result} (probabilité de {model.predict_proba(df_test)[0][0 if result == "Sain" else 1] * 100 :.2f}%)', className='card-title text-center p-4'), \
-        dbc.Accordion(
-            [dbc.AccordionItem(
-                [html.P(f'Accuracy score de {score * 100 :.2f}%', className='card-title text-center text-white '),
-                 html.P(f'Précision de {precision * 100 :.2f}%', className='card-title text-center text-white'),
-                 html.P(f'Taux de faux négatifs de {falseNeg * 100 :.2f}%', className='card-title text-center text-white')],
-                title = "Statistiques du test",
-                className = 'card-title text-center bg-primary')],
-            start_collapsed = True,
-            className='card-title text-center bg-secondary')
+    return html.H4(f'{result} (probabilité de {model.predict_proba(df_test)[0][0 if result == "Sain" else 1] * 100 :.2f}%)', className='card-title text-center p-4')

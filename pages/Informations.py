@@ -55,14 +55,14 @@ layout = dbc.Container([
                                             ),
                                             html.P(
                                                 "Adresse : 2 rue Estouchet,33400 Villenave d'Ornon",
-                                                className="card-text"
+                                                className="card-text text-center"
                                             )
                                         ]
                                     ),
                                     className="col-md-8",
                                 ),
                             ],
-                            className="bg-warning text-black g-0 d-flex align-items-center",
+                            className="bg-secondary text-black g-0 d-flex align-items-center",
                         )
                     ],
     className="mb-3",
