@@ -18,18 +18,9 @@ app.layout = dbc.Container(
                 children=[
                     dbc.NavItem(dbc.Row(
                                 [
-                                    dbc.Col(html.H3("La Data au service de la Santé", className = "text-white text-center"), width={"size" : "auto"}),
-                                    dbc.Col(html.H3("   ")),
-                                    dbc.Col(html.H3("   ")),
-                                    dbc.Col(html.H3("   ")),
-                                    dbc.Col(html.H3("   ")),
-                                    dbc.Col(html.H3("   ")),
-                                    dbc.Col(html.H3("   ")),
-                                    dbc.Col(html.H3("   ")),
-                                    dbc.Col(html.H3("   ")),
-                                    dbc.Col(html.H3("   ")),
-                                    dbc.Col(html.H3("   ")),
-                                    dbc.Col(html.H3("   "), width = 3)
+                                    dbc.Col(html.H3("La Data au service de la Santé", className = "text-white text-center me-5"), width={"size" : "auto"}),
+                                    dbc.Col(html.H3("",className = "text-white text-center me-5")),
+                                    dbc.Col(html.H3("",className = "text-white text-center me-5"))
                     ], align = "center")),
                     dbc.NavItem(dbc.NavLink("Informations", href="/informations",className="text-white")),
                     dbc.DropdownMenu(
