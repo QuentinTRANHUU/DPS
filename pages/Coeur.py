@@ -38,7 +38,7 @@ df, model, score, precision, falseNeg, layout= generique_page_maladie.create_lay
 )
 def get_results(input,states):
     df_test = pd.DataFrame([states], columns=df.iloc[:,:-1].columns)
-    for col in df_test.columns :
+    for col in ['sex', 'exang', 'cp', 'restecg', 'slope', 'ca', 'thal'] : 
         df_test[col] = df_test[col].astype('int')
         
     result = col_name[page_name]["target"][model.predict(df_test)[0]]
