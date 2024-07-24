@@ -10,6 +10,8 @@ df_relative_path = r"\dataframes\clean_ckd_df.csv"
 
 page_name = "Maladie Rénale Chronique"
 
+image_page = r"\assets\images\maladie_reinale.jpeg"
+
 col_name = {"Maladie Rénale Chronique": {"age" : "Age",
                                         "bp" : "Pression arterielle",
                                         "sg" : "Gravité spécifique",
@@ -38,7 +40,7 @@ col_name = {"Maladie Rénale Chronique": {"age" : "Age",
     }}
     
 # Créez la mise en page
-df, model, score, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
+df, model, score, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name, image_page)
 
 @callback(
     Output(page_name+'_resultat','children'),

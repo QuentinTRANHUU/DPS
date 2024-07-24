@@ -11,9 +11,19 @@ layout = dbc.Container([
     
     #------------------------Nom Page--------------------------#
     dbc.Row([
-        dbc.Col(html.H1("Informations",
-                        className="text-black p-4 text-center"))
-    ]),
+    dbc.Col(),
+    dbc.Col(
+        dbc.Card(
+            dbc.CardBody(
+                        html.H2("Informations",
+                                className="card-title text-black text-center p-2")
+                        ),
+            className="bg-light"),
+        width = {"size" : "auto"}
+        ),
+    dbc.Col(),
+    ],
+    className="m-5"),
 
     #------------------------Contact--------------------------#
     
