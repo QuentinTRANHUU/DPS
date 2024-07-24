@@ -1,4 +1,5 @@
 from dash import register_page, callback, Input, Output, State, html, ALL
+import dash_bootstrap_components as dbc
 import generique_page_maladie
 import pandas as pd
 
@@ -36,11 +37,11 @@ col_name = {"Maladie Rénale Chronique": {"age" : "Age",
                                         "appet" : "Niveaux d'appétit",
                                         "pe" : "Présence d'oedème aux pieds",
                                         "ane" : "Présence d'anémie",
-                                        "classification" : {"notckd": "Sain", "ckd":"Maladie Chronique des reins"}
+                                        "classification" : {0: "Sain", 1:"Maladie Chronique des reins"}
     }}
     
 # Créez la mise en page
-df, model, score, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name, image_page)
+df, model, score, precision, falseNeg, layout = generique_page_maladie.create_layout(df_relative_path, page_name, col_name)
 
 @callback(
     Output(page_name+'_resultat','children'),
@@ -53,4 +54,13 @@ def get_results(input,states):
     
     result = col_name[page_name]["classification"][model.predict(df_test)[0]]
     
-    return html.H4(f'{result} (probabilité de {model.predict_proba(df_test)[0][1 if result == "Sain" else 0] * 100 :.2f}%)', className='card-title text-center p-4')
+    return html.H4(f'{result} (probabilité de {model.predict_proba(df_test)[0][0 if result == "Sain" else 1] * 100 :.2f}%)', className='card-title text-center p-4'), \
+        dbc.Accordion(
+            [dbc.AccordionItem(
+                [html.P(f'Accuracy score de {score * 100 :.2f}%', className='card-title text-center text-white '),
+                 html.P(f'Précision de {precision * 100 :.2f}%', className='card-title text-center text-white'),
+                 html.P(f'Taux de faux négatifs de {falseNeg * 100 :.2f}%', className='card-title text-center text-white')],
+                title = "Statistiques du test",
+                className = 'card-title text-center bg-primary')],
+            start_collapsed = True,
+            className='card-title text-center bg-secondary')
