@@ -84,7 +84,7 @@ layout = dbc.Container([
                                         [
                                             html.H4("Qui sommes-nous ?", className="card-title text-center p-2"),
                                             html.P(
-                                                "Nous sommes une équipe de Data Analyst unis par une mission commune, transformer la prévention des maladies chroniques par le développement de puissants algorithmes de dépistage des maladies. Notre objectif : vous offrire une longueur d'avance sur la maladie.",
+                                                "Nous sommes une équipe de Data Analysts unis par une mission commune, transformer la prévention des maladies chroniques par le développement de puissants algorithmes de dépistage des maladies. Notre objectif : vous offrir une longueur d'avance sur la maladie.",
                                                 className="card-text",
                                             )
                                         ]
@@ -121,8 +121,7 @@ layout = dbc.Container([
                                         [
                                             html.H4("Notre Solution", className="card-title text-center p-4"),
                                             html.P(
-                                                "Notre solution repose sur un modèle de prédiction avancé, conçu pour identifier les risques de maladies chroniques avec une précision inégalée. En combinant des algorithmes d'intelligence artificielle avec des données cliniques actualisées, nous offrons un dépistage personnalisé qui tient compte de l'historique médical, des habitudes de vie, et des facteurs génétiques de chaque individu. Grâce à notre plateforme intuitive, vous pouvez réaliser un dépistage complet en quelques clics et recevoir des recommandations personnalisées pour prévenir les complications. Ensemble, transformons la prévention et faisons de la santé une priorité accessible à tous",
-                                                className="card-text",
+                                                "Notre solution repose sur un modèle de prédiction avancé, conçu pour identifier les risques de maladies chroniques avec une précision inégalée. En combinant des algorithmes d'intelligence artificielle avec des données cliniques actualisées, nous offrons un dépistage personnalisé qui tient compte de l'historique médical et des habitudes de vie de chaque individu. Grâce à notre plate-forme intuitive, vous pouvez réaliser un dépistage complet en quelques clics pour mieux prévenir les complications. Ensemble, transformons la prévention et faisons de la santé une priorité accessible à tous",                                                className="card-text",
                                             )
                                         ]
                                     ),
