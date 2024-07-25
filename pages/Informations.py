@@ -43,7 +43,7 @@ layout = dbc.Container([
                                     className="col-md-6",
                                 ),
                             ],
-                            className="bg-secondary text-black g-0 d-flex align-items-center",
+                            className="bg-secondary bg-opacity-50 text-black g-0 d-flex align-items-center",
                         )
                     ],
     className="m-5",
