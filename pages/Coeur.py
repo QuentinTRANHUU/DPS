@@ -1,5 +1,4 @@
 from dash import register_page, callback, Input, Output, State, html, ALL
-import dash_bootstrap_components as dbc
 import generique_page_maladie
 import pandas as pd
 

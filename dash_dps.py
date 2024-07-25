@@ -1,5 +1,5 @@
 from dash import Dash, html,page_container, callback, Input, Output
-import dash_core_components as dcc
+from dash_core_components import Location
 import dash_bootstrap_components as dbc
 
 # Création de l'application Dash
@@ -11,7 +11,7 @@ app._favicon = (r"\assets\favicon.ico")
 # Créez la mise en page
 app.layout = dbc.Container(
     [
-        dcc.Location(id='url'),
+        Location(id='url'),
         dbc.Row(className="g-0 gy-1"),
 
         #------------------------Nav Bar--------------------------#
@@ -30,8 +30,7 @@ app.layout = dbc.Container(
                                 html.Hr(style={"color":"white"},className="m-0 mb-1"),
                                 dbc.Row([html.H4("", className = "text-white text-center", id = "Nav_nom_page")])
                             ],
-                            className="mx-auto"),
-                        dbc.NavItem(dbc.NavLink("Informations", href="/informations",className="text-white fs-4")),
+                            className="mx-auto"),  
                         dbc.DropdownMenu(
                             children=[
                                 dbc.DropdownMenuItem("Diabète", href = "/diabete",className="text-black"),
@@ -43,8 +42,13 @@ app.layout = dbc.Container(
                             in_navbar = True,
                             align_end = True,
                             label = "Tests",
-                            className="text-light me-4 fs-4"
-                            )
+                            className="text-light fs-5"
+                            ),                    
+                        html.A(
+                            href= "/informations",
+                            children=[html.Img(src = r"\assets\images\logo_info.png", height="50px")],
+                            className="text-white fs-5 me-4"
+                            ),
                         ],
                         direction="horizontal",
                         gap=3)

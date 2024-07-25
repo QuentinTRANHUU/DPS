@@ -1,7 +1,6 @@
-from dash import Dash, html, dcc, Input, Output, State, callback
+from dash import html
 # from dash_dps import app
 import numpy as np
-import pandas as pd
 import plotly.express as px
 import dash_bootstrap_components as dbc
 import formulaire

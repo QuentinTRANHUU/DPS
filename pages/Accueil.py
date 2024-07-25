@@ -1,6 +1,4 @@
-from dash import Dash, html, dcc,register_page
-import pandas as pd
-import plotly.express as px
+from dash import html,register_page
 import dash_bootstrap_components as dbc
 
 # Enregistrement de la page
@@ -185,10 +183,10 @@ layout = dbc.Container([
                 dbc.Col(width = 3),
                 dbc.Col(dbc.Carousel(
                             items=[
-                                {"key": "1", "caption" : "DPS, un ami, un confident, un amour de technologie." , "src": r"/assets\images\dr_group.png"},
-                                {"key": "2", "caption" : "Avant DPS, j'avais peur de mal diagnostiquer.", "src": r"/assets\images\dr_soucis.png"},
-                                {"key": "3", "caption" : "Grâce à DPS, je peux enfin faire de vrais diagnostiques !", "src": r"/assets\images\dr_GPT.png"},
-                                {"key": "4", "caption" : "Avec DPS, la chasse aux maladies chroniques est facile.", "src": r"\assets\images\Dr_chat.png"},
+                                {"key": "1", "src": r"/assets\images\dr_group.png"},
+                                {"key": "2", "src": r"/assets\images\dr_soucis.png"},
+                                {"key": "3", "src": r"/assets\images\dr_GPT.png"},
+                                {"key": "4", "src": r"\assets\images\Dr_chat.png"},
                             ],
                             controls=True,
                             indicators=True,
