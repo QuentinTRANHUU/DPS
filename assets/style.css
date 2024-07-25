@@ -1,6 +1,64 @@
 H1 {
     font-size: 3.5vmin
 }
-.dropdown-toggle{
-    color: white;
+/* h4{
+    font-family: "SdA_Title" !important;
 }
+h2{
+    font-family: "SdA_Title" !important;
+} */
+.nav-link{
+    color: white !important;
+}
+.dropdown-toggle{
+    color: white !important;
+}
+.hstack {
+    width: 100%;}
+.gy-1{
+    padding-bottom: 8rem;
+}
+.gy-2{
+    padding-top: 6rem;
+}
+.nav{z-index:1000;}
+    /* font-family: "SdA_Title" !important;} */
+.position-fixed.bottom-0.border-top.border-white{z-index:1000}
+body{
+    width: 100%;
+}
+@font-face {
+    font-family: "SdA_Title";
+    src: url("fonts/RingbearerMedium-51mgZ.ttf");
+}
+@font-face {
+    font-family: "SdA_Journal";
+    src: url("fonts/Middleearth-ao6m.ttf");
+}
+@font-face {
+    font-family: "Alien";
+    src: url("fonts/Alien_Hieroglyph.ttf");
+}
+@font-face {
+    font-family: "OneRing";
+    src: url("fonts/tngani.ttf");
+}
+@font-face {
+    font-family: "Bilbo";
+    src: url("fonts/hobbitonbrushhand.ttf");
+}
+@font-face {
+    font-family: "Designer";
+    src: url("fonts/DESIGNER.otf");
+}
+@font-face {
+    font-family: "Caviar";
+    src: url("fonts/CaviarDreams.ttf");
+}
+@font-face {
+    font-family: "Palatino";
+    src: url("fonts/unicode.palatino.ttf");
+}
+/* body {
+    font-family: "Alien";
+} */

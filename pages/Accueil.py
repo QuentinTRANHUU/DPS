@@ -38,12 +38,12 @@ layout = dbc.Container([
                                     className="col-md-6",
                                 )
                             ],
-                            className="bg-dark text-white g-0 d-flex align-items-center  text-center",
+                            className="bg-dark text-white g-0 d-flex align-items-center text-center",
                         )
                     ],
-    className="m-5",
-    ),
-    width= {"size":11,"offset":0})
+                    className="m-5"
+                    ),
+             width= {"size":11,"offset":0})
     ]),
     dbc.Row(style={"height": "5vh"}),
 
@@ -111,7 +111,7 @@ layout = dbc.Container([
                                     className="col-md-6",
                                 ),
                             ],
-                            className="bg-warning text-black g-0 d-flex align-items-center text-center",
+                            className="bg-warning bg-opacity-50 text-black g-0 d-flex align-items-center text-center",
                         )
                     ],
     className="mb-3",
@@ -187,11 +187,12 @@ layout = dbc.Container([
                             items=[
                                 {"key": "1", "caption" : "DPS, un ami, un confident, un amour de technologie." , "src": r"/assets\images\dr_group.png"},
                                 {"key": "2", "caption" : "Avant DPS, j'avais peur de mal diagnostiquer.", "src": r"/assets\images\dr_soucis.png"},
-                                {"key": "3", "caption" : "Je fais de jolis diagnostiques, DPS en fait de vrais !", "src": r"/assets\images\dr_GPT.png"},
+                                {"key": "3", "caption" : "Grâce à DPS, je peux enfin faire de vrais diagnostiques !", "src": r"/assets\images\dr_GPT.png"},
                                 {"key": "4", "caption" : "Avec DPS, la chasse aux maladies chroniques est facile.", "src": r"\assets\images\Dr_chat.png"},
                             ],
                             controls=True,
-                            indicators=True
+                            indicators=True,
+                            interval=3000
                             ),
                         width = 6)
             ])

@@ -50,7 +50,7 @@ df, model, score, precision, falseNeg, layout = generique_page_maladie.create_la
     prevent_initial_call = True
 )
 def get_results(input,states):
-    df_test = pd.DataFrame([states], columns=df.iloc[:,:-1].columns)
+    df_test = pd.DataFrame([states], columns=df.iloc[:,:-1].columns).iloc[:,[0,1,2,9,10,12,13,15,16,17,-1]]
     
     result = col_name[page_name]["classification"][model.predict(df_test)[0]]
     

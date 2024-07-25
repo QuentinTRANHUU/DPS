@@ -44,10 +44,15 @@ def create_layout(df_relative_path, page_name, col_name, image_page):
                                                                                 class_weight = 'balanced'),
                                              "scaler": StandardScaler(),
                                              "encoder": TargetEncoder(smooth = 50)}}
+
+    df_filou = df
+        
+    if page_name == "Maladie Rénale Chronique":
+        df_filou = df_filou.iloc[:,[0,1,2,9,10,12,13,15,16,17,-1]]
     
     # Définition des types de colonnes:
-    numeric_col = [column for column in df.iloc[:, :-1].select_dtypes(include=[np.number]).columns if df.iloc[:, :-1][column].nunique() > len(df.iloc[:, :-1])**(1/2)]
-    cat_col = [column for column in df.iloc[:, :-1].columns if column not in numeric_col]
+    numeric_col = [column for column in df_filou.iloc[:, :-1].select_dtypes(include=[np.number]).columns if df_filou.iloc[:, :-1][column].nunique() > len(df_filou.iloc[:, :-1])**(1/2)]
+    cat_col = [column for column in df_filou.iloc[:, :-1].columns if column not in numeric_col]
     
     # Définition de la pipeline
     pipeline = make_pipeline(
@@ -87,23 +92,6 @@ def create_layout(df_relative_path, page_name, col_name, image_page):
     # Créez la mise en page
     return df, model, score, precision, falseNeg, dbc.Container([
         
-        #------------------------Nom Page--------------------------#
-        dbc.Row([
-            dbc.Col(),
-            dbc.Col(
-                dbc.Card(
-                    dbc.CardBody(
-                                html.H2(page_name,
-                                        className="card-title text-black text-center p-2",
-                                        id = page_name+"_page_name")
-                                ),
-                    className="bg-light"),
-                width = {"size" : "auto"}
-                ),
-            dbc.Col(),
-            ],
-            className="m-5"),
-        
         #------------------------Avant de commencer--------------------------#
         
         dbc.Row([
@@ -122,7 +110,7 @@ def create_layout(df_relative_path, page_name, col_name, image_page):
                                     dbc.Col(
                                         dbc.CardBody(
                                             [
-                                                html.H4(f"Statistiques du modèle :", className="card-title text-center p-4"),
+                                                html.H4(f"Caractéristiques du modèle :", className="card-title text-center p-4"),
                                                 html.P(f"Accuracy score de {score * 100 :.2f}%",
                                                     className="card-text text-center",
                                                 ),

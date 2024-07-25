@@ -19,7 +19,7 @@ layout = dbc.Container([
                             [
                                 dbc.Col(
                                     dbc.CardImg(
-                                        src=r"\assets\images\doctor.jpg",
+                                        src=r"\assets\images\facteur_chat.jpg",
                                         className="img-fluid rounded-start",
                                     ),
                                     className="col-md-6",

@@ -23,7 +23,7 @@ def get_df(relative_path):
     else:
         df = pd.read_csv(path + relative_path)
     
-    return pd.read_csv(path + relative_path)
+    return df
 
 def create_champ_formulaire(df,col,page_name, col_name):
     
