@@ -1,5 +1,4 @@
-from dash import Dash, html,page_container, callback, Input, Output
-from dash_core_components import Location
+from dash import Dash, html,page_container, callback, Input, Output, dcc
 import dash_bootstrap_components as dbc
 
 # Création de l'application Dash
@@ -11,7 +10,7 @@ app._favicon = (r"\assets\favicon.ico")
 # Créez la mise en page
 app.layout = dbc.Container(
     [
-        Location(id='url'),
+        dcc.Location(id='url'),
         dbc.Row(className="g-0 gy-1"),
 
         #------------------------Nav Bar--------------------------#

@@ -59,6 +59,21 @@ body{
     font-family: "Palatino";
     src: url("fonts/unicode.palatino.ttf");
 }
+@font-face {
+    font-family: "Antho_dream";
+    src: url("fonts/PenisTypographyRegular.ttf");
+}
 /* body {
-    font-family: "SdA_Title";
+    font-family: "Caviar";
 } */
+
+ /* Cachez-moi ce rond que je ne saurais voir ! */
+.dash-debug-menu{
+visibility: hidden;
+}
+.dash-debug-menu__content{
+visibility: hidden;
+}
+.dash-debug-menu__outer{
+visibility: hidden;
+}
