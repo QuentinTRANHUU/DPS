@@ -81,7 +81,7 @@ app.layout = dbc.Container(
         className="bg-primary g-0 position-fixed bottom-0 w-100 border-top border-white")
     ],
     fluid=True,
-    class_name="lh-lg g-0  font-Garamond")
+    class_name="lh-md g-0  font-Garamond")
 
 #nom de page dynamique
 @callback(
