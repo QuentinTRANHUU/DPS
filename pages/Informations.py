@@ -27,7 +27,7 @@ layout = dbc.Container([
                                         [
                                             html.H4("Contact", className="card-title text-center p-2"),
                                             html.P(
-                                                "Email : datapowerscreening@gmail.com",
+                                                "Email : data.avengers@dps.fr",
                                                 className="card-text"
                                             ),
                                             html.P(
