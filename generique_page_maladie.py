@@ -63,8 +63,8 @@ def create_layout(df_relative_path, page_name, col_name, image_page):
                                 )
     
     # Définition du X et y
-    X = df.iloc[:, :-1]
-    y = df.iloc[:,-1:]
+    X = df_filou.iloc[:, :-1]
+    y = df_filou.iloc[:,-1:]
 
     if page_name == "Maladies du Foie":
         ros = RandomOverSampler(random_state=42)
