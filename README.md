@@ -2,9 +2,9 @@
 
 C'est le troisième et dernier projet de groupe réalisé à la Wild Code School.
 
-<img width="1913" height="918" alt="image" src="https://github.com/user-attachments/assets/a5362822-7cce-4340-b53d-7be714977085" />
+<img width="1917" height="915" alt="image" src="https://github.com/user-attachments/assets/882def41-faff-4296-9018-f543cf6b0e0e" />
 
-<img width="1917" height="918" alt="image" src="https://github.com/user-attachments/assets/0faaf075-ae05-4aa4-83af-bd80da6bf6de" />
+<img width="1917" height="914" alt="image" src="https://github.com/user-attachments/assets/54cd4a57-0c81-4dac-814b-959d9f0a476d" />
 
 
 ## Nos accomplissements
@@ -27,16 +27,12 @@ C'est le troisième et dernier projet de groupe réalisé à la Wild Code School
     
     Création d'une application DASH où l'on peut interragir avec nos modèles pour prédire la présence où non de maladie à partir de résulats d'analyses médicales et de l'historique du patient.
 
-## Comment lancer l'application
+## Installation et lancement de l'application
 
   * Télécharger ce projet.
-  * Ouvrez votre console de commande
-  * Entrez-y la commande
-    ```
-      python votre_chemin_d_acces/dash_site_dps/dash_dps.py
-    ```
- * Parmis les lignes qui apparaîtront dans votre console de commande, trouver l'adresse http et faite ctr+clic droit dessus pour ouvrir l'application.
+  * Créez un environnement virtuel python (recommandé)
+  * Installez les dependances: ```pip install -r requirements.txt```
+  * Lancez l'application : ```python votre_chemin_d_acces/dash_site_dps/dash_dps.py```
+  * Parmis les lignes qui apparaîtront dans votre console de commande, trouver l'adresse http et faite ctr+clic droit dessus pour ouvrir l'application. La ligne devrait ressembler à ceci :
 
-   La ligne devrait ressembler à ceci :
-
-   <img width="377" height="76" alt="image" src="https://github.com/user-attachments/assets/e08d460a-e2aa-467f-bebc-649572fecc92" />
+     <img width="377" height="76" alt="image" src="https://github.com/user-attachments/assets/e08d460a-e2aa-467f-bebc-649572fecc92" />
