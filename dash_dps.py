@@ -92,9 +92,8 @@ def set_nav_name_page(p_name):
             "/foie" : "Maladies du foie",
             "/reins" : "Maladie rénale chronique",
             "/coeur" : "Maladies cardiaques",
-            "/accueil":"Accueil",
             "/informations" : "Informations",
-            "/" : "default"}
+            "/" : "Accueil"}
     return dico[p_name]
 
 # Lancez l'application
