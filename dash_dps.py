@@ -93,7 +93,8 @@ def set_nav_name_page(p_name):
             "/reins" : "Maladie rénale chronique",
             "/coeur" : "Maladies cardiaques",
             "/accueil":"Accueil",
-            "/informations" : "Informations"}
+            "/informations" : "Informations",
+            "/" : "default"}
     return dico[p_name]
 
 # Lancez l'application

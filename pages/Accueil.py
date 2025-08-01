@@ -2,7 +2,7 @@ from dash import html,register_page
 import dash_bootstrap_components as dbc
 
 # Enregistrement de la page
-register_page(__name__)
+register_page(__name__, path='/')
 
 # Créez la mise en page
 layout = dbc.Container([
