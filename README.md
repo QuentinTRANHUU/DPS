@@ -2,6 +2,8 @@
 
 C'est le troisième et dernier projet de groupe réalisé à la Wild Code School.
 
+"Il s'agit d'une application DASH d'aide au diagnostic médical. Vous pourrez interagir avec nos modèles de Machine Learning pour prédire la présence ou non de pathologies médicales. Il s'agit d'un projet étudiant, nous en sommes fiers, mais n'usez pas de cette application pour d'autres buts que récréatifs. En cas de problème de santé, merci de consulter un médecin. 🙏"
+
 <img width="1917" height="915" alt="image" src="https://github.com/user-attachments/assets/882def41-faff-4296-9018-f543cf6b0e0e" />
 
 <img width="1917" height="914" alt="image" src="https://github.com/user-attachments/assets/54cd4a57-0c81-4dac-814b-959d9f0a476d" />
