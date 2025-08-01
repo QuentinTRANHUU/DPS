@@ -6,7 +6,7 @@ Il s'agit d'une application **DASH** d'aide au diagnostic médical. Vous pourrez
 
 Note : Il s'agit d'un projet étudiant, nous en sommes fiers, mais n'usez pas de cette application pour d'autres buts que récréatifs. En cas de problème de santé, merci de consulter un médecin. 🙏
 
-<img width="1917" height="915" alt="image" src="https://github.com/user-attachments/assets/882def41-faff-4296-9018-f543cf6b0e0e" />
+<img width="1919" height="914" alt="image" src="https://github.com/user-attachments/assets/75a75db2-2a7f-4c6f-ba08-d5b7e5a2e7ca" />
 
 <img width="1917" height="914" alt="image" src="https://github.com/user-attachments/assets/54cd4a57-0c81-4dac-814b-959d9f0a476d" />
 
