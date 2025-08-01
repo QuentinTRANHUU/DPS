@@ -19,7 +19,7 @@ app.layout = dbc.Container(
             [
                 dbc.Stack([
                         html.A(
-                            href= "/accueil",
+                            href= "/",
                             children=[html.Img(src = r"\assets\images\Logo.png", height="70px")],
                             className="ms-4 m-2"
                             ),
