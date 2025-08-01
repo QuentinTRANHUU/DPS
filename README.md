@@ -13,17 +13,21 @@ Note : Il s'agit d'un projet étudiant, nous en sommes fiers, mais n'usez pas de
 ## Nos accomplissements
 
 + Individuellement (avec harmonisation de nos approches) :
+  
   - Comprendre notre jeu de données
     * Développer une expertise sur un nouveau domaine (ici médical)
     * Explorer la littérature scientifique (papiers de recherche...)
+      
   - Nettoyer nos données
     * Gestion des valeurs manquantes et aberrantes
     * Suppression des doublons
+      
   - Création d'un modèle prédictif
     * Prétraitement (normalisation, feature engineering...)
     * Test et sélection de modèles de Machine Learning
 
 + Collectivement :
+  
   Création d'une application DASH où l'on peut interagir avec nos modèles pour prédire la présence ou non de maladie à partir de résultats d'analyses médicales et de l'historique du patient.
 
 ## Installation et lancement de l'application
