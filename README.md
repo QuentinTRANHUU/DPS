@@ -1,4 +1,4 @@
-# 🧑‍🎓 Projet d'étude - Outil d'aide au diagnostic médical ⚕️
+# 🧑‍🎓 Projet d'étude - Outil d'aide au diagnostic médical⚕️
 
 C'est le troisième et dernier projet de groupe réalisé à la Wild Code School.
 
