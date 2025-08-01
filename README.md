@@ -27,7 +27,7 @@ C'est le troisième et dernier projet de groupe réalisé à la Wild Code School
 * Téléchargez ce projet.
 * Créez un environnement virtuel Python (recommandé).
 * Installez les dépendances : ```pip install -r requirements.txt```
-* Lancez l'application : ```python votre_chemin_d_acces/dash_site_dps/dash_dps.py```
+* Lancez l'application : ```python votre/chemin/d/acces/dash_dps.py```
 * Parmi les lignes qui apparaîtront dans votre console de commande, trouvez l'adresse http et faites Ctrl+clic gauche dessus pour ouvrir l'application. La ligne devrait ressembler à ceci :
 
   <img width="377" height="76" alt="image" src="https://github.com/user-attachments/assets/e08d460a-e2aa-467f-bebc-649572fecc92" />
